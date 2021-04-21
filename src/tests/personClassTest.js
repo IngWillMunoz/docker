@@ -1,8 +1,8 @@
 const assert = require('chai').assert;
 const person = require('../classes/person.js');
 
-const defaultValue = '';
-const defaultBirth = new Date('01/01/1980');
+const defaultValue = undefined;
+const defaultBirth = undefined;
 
 describe('Given no fullname, person getfullname function should return default value)', () => {
     const personInst = new person();
@@ -85,5 +85,23 @@ describe('Given a valid date, person getbirth function should return the given b
         personInst.setbirth(birth);
         const date = personInst.getbirth();
         assert.deepEqual(date, birth);
+    });
+});
+
+describe('init constructor', () => {
+    const personInst = new person();
+    it('get Person', () => {
+        personInst.Person();
+    });
+});
+
+describe('Given a Person instance, adopt a child', () => {
+    const parent = new person('father', '01/01/2000');
+    const child = new person('child', '01/01/2020');
+    parent.adopt(child);
+
+    it('get Children', () => {
+        const children = parent.getChildren();
+        assert.equal(children[1].fullname, child.fullname);
     });
 });
