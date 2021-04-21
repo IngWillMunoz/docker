@@ -8,18 +8,6 @@ const mother2 = new Person('María', '29/09/1987');
 const child = new Person('Santiago', '24/11/2016');
 const child2 = new Person('Felipe', '29/03/2007');
 
-// insertData = async (key, value) => {
-//     await client.set(key, value, (err, reply) => {
-//         if (err) throw err;
-//         console.log(reply);
-//     });
-// }
-// readData = async (key) => {
-//     await client.get(key, (err, reply) => {
-//         if (err) throw err;
-//         console.log(reply);
-//     });
-// }
 console.log("El padre adopta dos hijos");
 father.adopt(child);
 father.adopt(child2);
